@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <% if notice.present? %>
+        <div class="alert alert-success">
+          <%= notice %>
+        </div>
+      <% end %>
+ 
+
+      <div id="philosophers">
+        <% @philosophers.each do |philosopher| %>
+          <%= render philosopher %>
+          <p>
+            <%= link_to "View", philosopher, class: "btn btn-primary mt-2 mb-3" %>
+          </p>
+        <% end %>
+      </div>
+
+      <div class="text-center mt-4">
+       <% if user_signed_in? %>
+        <%= link_to "Add Philosopher", new_philosopher_path, class: "btn btn-success custom-btn" %>
+       <% end %>
+      </div>
+    </div>
+  </div>
+</div>

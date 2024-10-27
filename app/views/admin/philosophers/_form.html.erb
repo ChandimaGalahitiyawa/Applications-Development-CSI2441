@@ -1,0 +1,17 @@
+<%= form_with(model: admin_philosopher) do |form| %>
+  <% if admin_philosopher.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(admin_philosopher.errors.count, "error") %> prohibited this admin_philosopher from being saved:</h2>
+
+      <ul>
+        <% admin_philosopher.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

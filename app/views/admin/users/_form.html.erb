@@ -1,0 +1,36 @@
+<%= form_with(model: @user, url: admin_user_path(@user), html: { method: :put }) do |form| %>
+  <%= render "devise/shared/error_messages", resource: @user %>
+
+  <div class="form-group mt-3">
+    <%= form.label :first_name, class: "form-label" %>
+    <%= form.text_field :first_name, class: "form-control" %>
+  </div>
+
+  <div class="form-group mt-3">
+    <%= form.label :last_name, class: "form-label" %>
+    <%= form.text_field :last_name, class: "form-control" %>
+  </div>
+
+  <div class="form-group mt-3">
+    <%= form.label :email, class: "form-label" %>
+    <%= form.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+  </div>
+
+  <% if current_user.admin? && @user.id != current_user.id %>
+    <div class="form-group mt-3">
+      <%= form.label :status, class: "form-label" %>
+      <%= form.select :status, User.statuses.keys.map { |s| [s.humanize, s] }, {}, class: "form-control" %>
+    </div>
+  <% end %>
+
+  <% if current_user.admin? && @user.id != current_user.id %>
+    <div class="form-group mt-3">
+      <%= form.label :is_admin, "User Type", class: "form-label" %>
+      <%= form.select :is_admin, { "Admin" => true, "Standard" => false }, {}, class: "form-control" %>
+    </div>
+  <% end %>
+
+  <div class="form-group mt-4">
+    <%= form.submit "Update", class: "btn btn-primary custom-btn" %>
+  </div>
+<% end %>

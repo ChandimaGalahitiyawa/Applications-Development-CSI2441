@@ -1,0 +1,19 @@
+  <!-- Footer -->
+  <footer class="bg-white text-dark text-center">
+    <div class="container py-1">
+      <p>&copy; <span id="currentYear"></span> Chandima Galahitiyawa (10637143). All rights reserved.</p>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <!-- Bootstrap JS and any other necessary JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+  <!-- JavaScript to update the year dynamically -->
+  <script>
+    const currentYear = new Date().getFullYear();
+    document.getElementById('currentYear').textContent = currentYear;
+  </script>

@@ -1,0 +1,17 @@
+<div class="container">
+  <h2 class="mt-5">Search Results</h2>
+
+  <div class="row">
+    <% @quotes.each do |quote| %>
+      <div class="col-md-12">
+        <div class="card mt-3">
+          <div class="card-body">
+            <p class="card-text">"<%= quote.text %>"</p>
+            <p class="card-subtitle mb-2 text-muted"><em>- <%= quote.philosopher.full_name %></em></p>
+            <%= link_to "Show this quote", quote, class: "btn btn-primary btn-sm mr-2 mb-2" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

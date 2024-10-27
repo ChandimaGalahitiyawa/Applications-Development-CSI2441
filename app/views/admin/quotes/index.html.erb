@@ -1,0 +1,32 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Quotes</h1>
+
+<div id="admin_quotes">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Quote</th>
+        <th>Creator</th>
+        <th>Created Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @admin_quotes.each do |quote| %>
+        <tr>
+          <td><%= quote.content %></td> <!-- Assuming content is the attribute for the quote text -->
+          <td><%= quote.user.full_name %></td> <!-- Assuming user has a method full_name or similar -->
+          <td><%= quote.created_at.strftime("%d %b, %Y") %></td>
+          <td>
+            <%= link_to "Edit", edit_admin_quote_path(quote) %> | 
+            <%= link_to "Delete", admin_quote_path(quote), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "New quote", new_admin_quote_path %>
+

@@ -1,0 +1,37 @@
+<div class="container">
+  <h1 class="mt-5">Admin Dashboard</h1>
+
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <%= link_to "Manage Users", admin_users_path, class: "btn btn-primary btn-lg btn-block" %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <%= link_to "Manage Quotes", admin_quotes_path, class: "btn btn-primary btn-lg btn-block" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <%= link_to "Manage Philosophers", admin_philosophers_path, class: "btn btn-primary btn-lg btn-block" %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <%= link_to "Manage Categories", admin_categories_path, class: "btn btn-primary btn-lg btn-block" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

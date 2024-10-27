@@ -1,0 +1,25 @@
+      <h1>User Details</h1>
+      
+      <table class="table table-bordered mt-4">
+        <tbody>
+          <tr>
+            <th>Name</th>
+            <td><%= @user.first_name %> <%= @user.last_name %></td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td><%= @user.email %></td>
+          </tr>
+          <tr>
+            <th>Role</th>
+            <td><%= @user.is_admin ? "Admin" : "Standard User" %></td>
+          </tr>
+          <tr>
+            <th>Status</th>
+            <td><%= @user.status.humanize %></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+

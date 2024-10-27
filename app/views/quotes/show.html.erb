@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <% if notice.present? %>
+        <div class="alert alert-success">
+          <%= notice %>
+        </div>
+      <% end %>
+
+      <h1 class="mb-4">Quote Details</h1>
+
+      <%= render @quote %>
+       <% if user_signed_in? %>
+        <%= link_to "Edit this quote", edit_quote_path(@quote), class: "btn btn-primary custom-btn" %>
+       <% end %>
+       
+        <%= link_to "Back to quotes", quotes_path, class: "btn btn-secondary custom-btn mt-2" %>
+      
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<%= form_with(model: quote, class: "mt-4") do |form| %>
+  <% if quote.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
+
+      <ul>
+        <% quote.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="mb-3">
+  <%= form.label :category_id, "Category", class: "form-label" %>
+  <%= form.collection_select :category_id, Category.all, :id, :name, {}, class: "form-control" %>
+</div>
+
+  <div class="mb-3">
+    <%= form.label :philosopher_id, "Philosopher", class: "form-label" %>
+    <%= form.collection_select :philosopher_id, Philosopher.all, :id, :full_name, {}, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :text, "Quote", class: "form-label" %>
+    <%= form.text_area :text, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :publication_year, class: "form-label" %>
+    <%= form.number_field :publication_year, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :comment, class: "form-label" %>
+    <%= form.text_area :comment, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :is_public, "Visibility", class: "form-label" %>
+    <%= form.select :is_public, { "Public" => true, "Private" => false }, {}, class: "form-control" %>
+  </div>
+
+  <div class="mb-3 text-center">
+    <%= form.submit "Save Quote", class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h1 class="">New Philosopher</h1>
+
+      <%= render "form", philosopher: @philosopher %>
+
+      <div class="text-center mt-4">
+        <%= link_to "Back to Philosophers", philosophers_path, class: "btn btn-secondary custom-btn" %>
+      </div>
+    </div>
+  </div>
+</div>
+

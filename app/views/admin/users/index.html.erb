@@ -1,0 +1,43 @@
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+
+<div class="container">
+  <% if notice.present? %>
+    <div class="alert alert-success">
+      <%= notice %>
+    </div>
+  <% end %>
+
+  <h1>Users</h1>
+  <%= link_to "New user", new_admin_user_path, class: "btn btn-success mt-3" %>
+
+  <table class="table table-bordered mt-4">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Status</th> <!-- New header for Status -->
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.first_name %> <%= user.last_name %></td>
+          <td><%= user.is_admin ? "Admin" : "Standard User" %></td>
+          <td><%= user.status.humanize %></td> <!-- Display the user's status -->
+          <td>
+          <%= link_to "View", admin_user_path(user), class: "btn btn-info" %> 
+            <%= link_to "Edit", edit_admin_user_path(user), class: "btn btn-primary" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  
+</div>
+   </div>
+  </div>
+</div>

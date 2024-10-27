@@ -1,0 +1,14 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <h1 class="mb-4">Editing Quote</h1>
+      <%= render "form", quote: @quote %>
+
+      <div class="mt-4">
+        <%= link_to "Show this quote", @quote, class: "btn btn-primary" %> |
+        <%= link_to "Back to quotes", quotes_path, class: "btn btn-secondary" %>
+      </div>
+    </div>
+  </div>
+</div>
+

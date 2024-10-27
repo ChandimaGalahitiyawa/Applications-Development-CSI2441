@@ -1,0 +1,18 @@
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <% if notice.present? %>
+        <div class="alert alert-success mt-5">
+          <%= notice %>
+        </div>
+      <% end %>
+      
+      <%= render @user %>
+
+      <div class="mt-4">
+        <%= link_to "Edit this user", edit_admin_user_path(@user), class: "btn btn-primary mt-2 mb-4 custom-btn" %>
+        <%= link_to "Back to users", admin_users_path, class: "btn btn-secondary custom-btn " %>
+      </div>
+    </div>
+  </div>
+</div>
